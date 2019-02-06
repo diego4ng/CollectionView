@@ -37,7 +37,7 @@ if (!removeCurrent && !removeNext)
 
         }
 
-      i++
+      x++
 
     }
 // en caso de haber solo uno incrementado nos deolvera true
