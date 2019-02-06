@@ -14,9 +14,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
  
     
-    
-    var  collectionData = ["1","2","3","4","5","6","7","8","9","10","11","12"]
-    var images = [UIImage]()
     let imageURLs = [
         "https://www.nationalgeographic.com.es/medio/2017/07/13/playa-de-calblanque-la-manga_d69607cb.jpg",
         "http://t2.gstatic.com/images?q=tbn:ANd9GcQob9105oHMBENJBgrmXmTCRSs14m8FVZfOf25WTN7lO3qT-GJs6N_YXG7G",
@@ -27,7 +24,7 @@ class ViewController: UIViewController {
         "https://www.nationalgeographic.com.es/medio/2017/07/13/playa-de-calblanque-la-manga_d69607cb.jpg",
         "https://www.nationalgeographic.com.es/medio/2017/07/13/playa-de-calblanque-la-manga_d69607cb.jpg"]
     
-    let URL_IMAGE = URL(string: "http://t1.gstatic.com/images?q=tbn:ANd9GcS0cjDhf5MPvwPyjPWeAJMSsrAEbQoFeRQU78-B-F0fftw5OdBrwr4o1Uy")
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
