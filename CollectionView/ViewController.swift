@@ -31,7 +31,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        // Descomentar para que sean 3 columnas
+        // let width = (view.frame.size.width - 20) / 3
+        //Dos columnas
+        let width = (view.frame.size.width - 20) / 2
+        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.itemSize = CGSize(width: width, height: width)
 
 }
 }
