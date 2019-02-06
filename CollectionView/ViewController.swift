@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ViewController: UIViewController {
     
@@ -17,14 +18,14 @@ class ViewController: UIViewController {
     var  collectionData = ["1","2","3","4","5","6","7","8","9","10","11","12"]
     var images = [UIImage]()
     let imageURLs = [
-        "http://t1.gstatic.com/images?q=tbn:ANd9GcS0cjDhf5MPvwPyjPWeAJMSsrAEbQoFeRQU78-B-F0fftw5OdBrwr4o1Uy",
+        "https://www.nationalgeographic.com.es/medio/2017/07/13/playa-de-calblanque-la-manga_d69607cb.jpg",
         "http://t2.gstatic.com/images?q=tbn:ANd9GcQob9105oHMBENJBgrmXmTCRSs14m8FVZfOf25WTN7lO3qT-GJs6N_YXG7G",
         "http://t1.gstatic.com/images?q=tbn:ANd9GcRbm05Y2f6R4q9apNggsKZ5gLpbnkaeENis609zG_9RPq6t0gQ8jeoMW6-w",
         "http://t3.gstatic.com/images?q=tbn:ANd9GcTwe8tovwf3oZDDI3C6NVSEQ51jUP2FXjoajqBmJeTCoQ6avOMlfqbLny1d",
-        "http://t0.gstatic.com/images?q=tbn:ANd9GcR5Rizfjr_C3DbB8QLBvNo57OAZYqdUsgAYquYOuM44_vzyRctKUhZReTW",
-        "http://t1.gstatic.com/images?q=tbn:ANd9GcTFIR5hoxegrBnJk9tr4KHay56tv4IQdvszDi8xepp_nvuRGl9dhLhvW79",
-        "http://t0.gstatic.com/images?q=tbn:ANd9GcSHUXhN8i5bb1Jnn_nhzx7HLlyopLPGxb4ljnbEvQu-sl7zS_mTGtsaoUc",
-        "http://t1.gstatic.com/images?q=tbn:ANd9GcT1f-BwhNxzvy2aHcGLxYeGwYN_liLnCMFi7VkAHKL53lokLa_2i_uUZgZ"]
+        "https://www.nationalgeographic.com.es/medio/2017/07/13/playa-de-calblanque-la-manga_d69607cb.jpg",
+        "https://www.nationalgeographic.com.es/medio/2017/07/13/playa-de-calblanque-la-manga_d69607cb.jpg",
+        "https://www.nationalgeographic.com.es/medio/2017/07/13/playa-de-calblanque-la-manga_d69607cb.jpg",
+        "https://www.nationalgeographic.com.es/medio/2017/07/13/playa-de-calblanque-la-manga_d69607cb.jpg"]
     
     let URL_IMAGE = URL(string: "http://t1.gstatic.com/images?q=tbn:ANd9GcS0cjDhf5MPvwPyjPWeAJMSsrAEbQoFeRQU78-B-F0fftw5OdBrwr4o1Uy")
     
@@ -44,14 +45,11 @@ extension ViewController : UICollectionViewDelegate, UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath)
-        
-        if let label = cell.viewWithTag(100) as? UILabel {
-            label.text = imageURLs[indexPath.row]
-        }
-       
-       
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! cellcontroller
+    let resource = ImageResource(downloadURL: URL(string: imageURLs[indexPath.row])!, cacheKey:imageURLs[indexPath.row])
+    cell.imagecell.kf.setImage(with: resource)
+    cell.labelcell.text = imageURLs[indexPath.row]
+
         return cell
         
     }
